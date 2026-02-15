@@ -1,0 +1,40 @@
+#include <iostream>
+
+struct Car{
+    std::string model;
+    int year;
+    std::string color;
+};
+
+void printcar(Car &car);
+void changecolor(Car &car,std::string color);
+
+int main(){
+ 
+Car car1;
+car1.model ="Mustang";
+car1.year=2024;
+car1.color="Blue";
+
+Car car2;
+car2.model ="Ferrari";
+car2.year=2022;
+car2.color="Red";
+
+changecolor(car1,"Yellow");
+changecolor(car2,"White");
+
+printcar(car1);
+printcar(car2);
+
+    return 0;
+}
+void printcar(Car &car){
+    std::cout<<car.model<<'\n';
+    std::cout<<car.year<<'\n';
+    std::cout<<car.color<<'\n';
+
+}
+void changecolor(Car &car,std::string color){
+    car.color=color;
+}
